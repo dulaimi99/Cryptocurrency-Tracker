@@ -49,7 +49,7 @@
               <h3>Headlines</h3>
               <script  >
                   function getnews(){
-                      fetch('https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/everything?q=cryptocurrency&from=2020-11-24&sortBy=popularity&apiKey=1f0af31cdfd047d4b02f887df2b38601', {headers: new Headers({"X-Requested-With":"news"})})
+                      fetch('https://newsapi.org/v2/everything?q=bitcoin&apiKey=1f0af31cdfd047d4b02f887df2b38601')
                       .then(a => a.json())
                       .then(response => {
                           for (var i =0; i < response.articles.length; i++){
