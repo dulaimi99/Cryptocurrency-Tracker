@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Dashboard</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark md-5">
+        <a class="navbar-brand" href="#">Currency Tracker</a>
+        <div class="navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a class="nav-link" href="#">home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">about</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    
+    
+      <body>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-md-8">
+                <div class="jumbotron">
+                    <h1 class="display-4">Cryptocurrency Tracker</h1>
+                    <p class="lead">This dashboard shows you the current market status of the top 15 Cryptocurrencies</p>
+                    <hr class="my-4">
+                    <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                          aria-label="Search">
+                      </form>
+                  </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-md-8">
+              <h3>Listings</h3>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <h3>Headlines</h3>
+              <script  >
+                  function getnews(){
+                      fetch('https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/everything?q=cryptocurrency&from=2020-11-24&sortBy=popularity&apiKey=1f0af31cdfd047d4b02f887df2b38601', {headers: new Headers({"X-Requested-With":"news"})})
+                      .then(a => a.json())
+                      .then(response => {
+                          for (var i =0; i < response.articles.length; i++){
+                              document.getElementById("output").innerHTML+="<div style='padding-top: 20px;'><img style='float:left; width: 100px;' src='"+response.articles[i].urlToImage+"'><h2>"+response.articles[i].title+"</h2>"+response.articles[i].source.name+"<br>"+response.articles[i].description+" <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+                          }
+                      })
+                  }
+              </script>
+              <button onclick='getnews()'>Get News</button>
+              <div id="output"></div>
+            </div>
+          </div>
+</body>
+</html>
