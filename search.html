@@ -6,9 +6,10 @@
     <body>
         <input list="currency" type="text" id="searchBar">
         <datalist id="currency"></datalist>
+        <script src="search.js"></script>
         <script>
             //replace hardcoding of currency with fill by API call
-            var currency = [
+            /* var currency = [
                 "Bitcoin",
                 "Etherium",
                 "XRP",
@@ -21,7 +22,7 @@
                 var optionElement = document.createElement("option");
                 optionElement.value = currency[i];
                 document.getElementById("currency").appendChild(optionElement);
-            }
+            } */
 
         </script>
     </body>
