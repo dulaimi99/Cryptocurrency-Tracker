@@ -1,8 +1,21 @@
 charting()
 
-
-
 function charting(){
+    let prom = fetchGraphData("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7&interval=daily");
+	prom.catch(error => { console.error(error.message); });
+	prom.then(data => {
+        console.log(data);
+        var temp_prices = data.prices;
+        console.log(temp_prices)
+        var prices = [];
+        for(var i = 0; i < temp_prices.length; i++) {
+            prices.push(temp_prices[i][1])
+        }
+        var m_cap = data.market_caps;
+        var t_vol = data.total_volumes;
+
+        console.log(prices, m_cap, t_vol);
+    })
     var ctx = document.getElementById('chart').getContext('2d');
     var myChart = new Chart(ctx, {
     type: 'bar',
@@ -40,4 +53,15 @@ function charting(){
             }
         }
     });
+}
+
+
+async function fetchGraphData(url) {
+    
+    let response = await fetch(url);
+    if (response.status == 200) {
+        data = await response.json();
+        return data;
+    }
+    throw new Error(response.status);
 }
