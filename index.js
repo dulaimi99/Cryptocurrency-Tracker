@@ -1,3 +1,5 @@
+
+// Getting cors error
 function getnews(){
     fetch('https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=bitcoin&apiKey=1f0af31cdfd047d4b02f887df2b38601', {headers: new Headers({"X-Requested-With":"cryto"})})
     .then(a => a.json())
