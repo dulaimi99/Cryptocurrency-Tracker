@@ -47,17 +47,7 @@
             </div>
             <div class="col-xs-6 col-md-4">
               <h3>Headlines</h3>
-              <script  >
-                  function getnews(){
-                      fetch('https://newsapi.org/v2/everything?q=bitcoin&apiKey=1f0af31cdfd047d4b02f887df2b38601')
-                      .then(a => a.json())
-                      .then(response => {
-                          for (var i =0; i < response.articles.length; i++){
-                              document.getElementById("output").innerHTML+="<div style='padding-top: 20px;'><img style='float:left; width: 100px;' src='"+response.articles[i].urlToImage+"'><h2>"+response.articles[i].title+"</h2>"+response.articles[i].source.name+"<br>"+response.articles[i].description+" <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
-                          }
-                      })
-                  }
-              </script>
+              <script src = "index.js" ></script>
               <button onclick='getnews()'>Get News</button>
               <div id="output"></div>
             </div>
