@@ -23,7 +23,7 @@ request('GET','https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/late
     // creates a table row
     var row = document.createElement("tr");
 
-    for (var j = 0; j < 1; j++) {
+    for (var j = 0; j < 2; j++) {
       // Create a <td> element and a text node, make the text
       // node the contents of the <td>, and put the <td> at
       // the end of the table row
