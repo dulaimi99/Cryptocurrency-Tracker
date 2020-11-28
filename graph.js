@@ -10,9 +10,17 @@ function charting(){
         console.log(data);
         var temp_prices = data.prices;
         var prices = [];
+        var dates = [];
         for(var i = 0; i < temp_prices.length; i++) {
-            prices.push(temp_prices[i][1])
+            prices.push(temp_prices[i][1]);
+            dates.push(temp_prices[i][0]);
         }
+
+        for(i = 0; i < 8; i++) {
+            let temp = new Date(dates[i])
+            console.log(temp.toDateString())
+        }
+
         var m_cap = data.market_caps;
         var t_vol = data.total_volumes;
 
@@ -26,7 +34,7 @@ function charting(){
         datasets: [{
             label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
+/*             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(255, 206, 86, 0.2)',
@@ -42,7 +50,7 @@ function charting(){
                 'rgba(153, 102, 255, 1)',
                 'rgba(255, 159, 64, 1)'
             ],
-            borderWidth: 1
+            borderWidth: 1 */
         }]
         },
         options: {
