@@ -1,3 +1,6 @@
+
+
+
 charting()
 
 function charting(){
@@ -6,7 +9,6 @@ function charting(){
 	prom.then(data => {
         console.log(data);
         var temp_prices = data.prices;
-        console.log(temp_prices)
         var prices = [];
         for(var i = 0; i < temp_prices.length; i++) {
             prices.push(temp_prices[i][1])
@@ -44,6 +46,8 @@ function charting(){
         }]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 yAxes: [{
                     ticks: {
