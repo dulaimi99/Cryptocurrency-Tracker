@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Parameter Sender</title>
+        <title>Parameter Sender Example</title>
     </head>
     <body>
-        <form action="receiver.html">
-            <input type="hidden" name="varname" value="12345" />
+        <form action="receiver.html" method="GET">
+            <input type="text" name="varname" value="12345"/>
+            <!-- <input type="hidden" name="varname" value="12345" /> -->
             <input type="submit" value="Send data">
           </form>          
     </body>
