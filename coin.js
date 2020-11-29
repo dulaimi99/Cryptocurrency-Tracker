@@ -18,11 +18,32 @@ var myArray = []
 		}
 	})
 
+    $('#search_input').on('keyup', function(){
+        var value = $(this).val()
+        console.log('Value:', value)
+        var data = searchTable(value, myArray)
+        buildTable(data)
+    })
 
+    function searchTable(value, data){
+        var filteredData = []
+
+        for(var i = 0; i < data.length; i++){
+            value = value.toLowerCase()
+            var name = data[i].name.toLowerCase()
+
+            if(name.includes(value)){
+                filteredData.push(data[i])
+            }
+        }
+        return filteredData
+    }
+
+    buildTable(myArray)
 
 	function buildTable(data){
 		var table = document.getElementById('myTable')
-
+        table.innerHTML = ''
 		// for (var i = 0; i < data.length; i++){
         for (var i = 1; i <= 25; i++){
             var row = `<tr>
@@ -33,7 +54,5 @@ var myArray = []
                             <td>$${data[i].quote.USD.volume_24h.toFixed(0)}</td>
 					  </tr>`
 			table.innerHTML += row
-
-
 		}
 	}
