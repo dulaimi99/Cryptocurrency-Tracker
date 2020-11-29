@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Dashboard</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark md-5">
+        <a class="navbar-brand" href="#">Currency Tracker</a>
+        <div class="navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a class="nav-link" href="index.html">home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">contact</a></li>
+        </ul>
+        </div>
+    </nav>
+
+      <body>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-md-8">
+                <div class="jumbotron">
+                    <h1 class="display-4"><center>Cryptocurrency Tracker</center></h1>
+                    <hr class="my-4">
+                    <form class="form-inline d-flex justify-content-center md-form form-sm mt-0" action="details.html" method="GET">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input class="form-control form-control-sm ml-3 w-75" type="text" value="" 
+                          aria-label="Search" name="currency" placeholder="Search" list=currency>
+                        <datalist id="currency"></datalist>
+                        <script src="search.js"></script>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate rhoncus orci, a interdum metus dapibus eget. Donec quis eleifend ante, quis gravida dolor. Curabitur ultricies, urna vitae ultrices pellentesque, felis tortor consectetur massa, eget ornare lacus dui nec nunc. Proin gravida non velit id ultricies. Sed gravida nisi sollicitudin nulla elementum pellentesque. Aliquam pulvinar, diam nec consequat bibendum, odio leo vulputate metus, et finibus erat lectus a nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut placerat dui pharetra, tempor nisi non, vestibulum felis. Morbi commodo eget mauris at euismod. Duis in suscipit ante. Suspendisse maximus accumsan porttitor. Sed aliquam augue consectetur vestibulum pharetra. Suspendisse ut nisi vitae odio accumsan ultrices. Nullam lacinia rhoncus nunc, eget efficitur ante pulvinar a. Mauris nec blandit dolor.</p>
+        <p>Donec semper blandit felis, sit amet faucibus turpis dictum ac. Duis sem odio, tempus vitae faucibus sed, auctor et elit. Suspendisse semper tortor at ex tincidunt, hendrerit pharetra ipsum semper. In bibendum enim diam, id iaculis purus convallis id. Nam mollis tempor velit, vel laoreet nunc. Nulla ut tincidunt erat, vel vulputate metus. Vestibulum nec fermentum arcu, in tincidunt tellus. Nunc pretium mi id leo ultricies, id lobortis ligula tincidunt.</p>
+          
+    </body>
+</html>
