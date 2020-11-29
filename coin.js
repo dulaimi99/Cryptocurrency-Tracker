@@ -49,7 +49,9 @@ var myArray = []
             var row = `<tr>
                             <td>${i}</td>
 							<td>${data[i].name} (${data[i].symbol})</td>
-							<td>$${data[i].quote.USD.price.toFixed(2)}</td>
+                            <td>$${data[i].quote.USD.price.toFixed(2)}</td>
+                            <td>${data[i].quote.USD.percent_change_7d.toFixed(2)}%</td>
+                            <td>${data[i].quote.USD.percent_change_24h.toFixed(2)}%</td>
                             <td>$${data[i].quote.USD.market_cap.toFixed(0)}</td>
                             <td>$${data[i].quote.USD.volume_24h.toFixed(0)}</td>
 					  </tr>`
