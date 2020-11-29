@@ -38,18 +38,26 @@ function sort_headlines(headline_array)
   //headlines container
   let container = document.getElementById('headlines_container')
   
+  //create a list
+  const list= document.createElement("ul")
+  container.appendChild(list)
+
+  //new li element variable
+  var new_li;
+
   //for loop variable
   var i;
-  //new headline element variable
-  var new_elem;
 
   //add headlines
   for(i = 0; i < 10; i++)
   {
-    //add to page
-    new_elem = document.createElement("h5")
-    new_elem.innerText = headline_array[i].title
-    container.appendChild(new_elem)  
+    //new headline entry
+    new_li = 
+    `<li>
+      <a href="${headline_array[i].url}">${headline_array[i].title}</a>
+    </li>`
+    //append  it to list 
+    list.innerHTML+=new_li;
   }
 }
 

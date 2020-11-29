@@ -1,3 +1,6 @@
+/**************************************
+ Populuating cryptocurrency table
+ *************************************/
 function request_table()
 {
     //using cors anywhere to get around cors issue
@@ -34,65 +37,26 @@ function request_table()
          }     
         )
         .then(response => response.json())
-        .then(json => sort_listings(json.data))
+        .then(json => add_listings(json.data))
         .catch(err => resolve_issue(err))
 }
 
-
-function sort_listings(data)
-{
-    //insert data into to table
-    var i;
-    const list_length = 25
-    
+//populate table with entries
+function add_listings(data)
+{    
     //table element
     const table = document.getElementById("table_body")
     table.innerHTML = ''
 
+    //for loop vars
+    var i;
+    const list_length = data.length
+
     for(i = 0; i < list_length; i++)
     {
-        /*
-        //new row
-        new_row = document.createElement("tr")
-        
-        //insert entry name 
-        new_name = document.createElement("td")
-        new_name.appendChild(document.createTextNode(listings_array[i].name + ' (' + listings_array[i].symbol + ')'))
-        new_row.appendChild(new_name)
-
-
-        //insert entry price 
-        new_price = document.createElement("td")
-        new_price.appendChild(document.createTextNode('$' + listings_array[i].quote.USD.price.toFixed(2)))
-        new_row.appendChild(new_price)
-
-        //insert entry supply 
-        new_supply = document.createElement("td")
-        new_price.appendChild(document.createTextNode(listings_array[i].circulating_supply))
-        new_row.appendChild(new_supply)
-
-        //insert entry market cap
-        new_market_cap = document.createElement("td")
-        new_market_cap.appendChild(document.createTextNode(listings_array[i].quote.USD.market_cap))
-        new_row.appendChild(new_market_cap)
-
-        //insert entry change last 24hour 
-        hour_24 = document.createElement("td")
-        hour_24.appendChild(document.createTextNode(listings_array[i].quote.USD.percent_change_24h.toFixed(2)))
-        new_row.appendChild(hour_24)
-
-        //insert entry change last 7 days 
-        day_7 = document.createElement("td")
-        day_7.appendChild(document.createTextNode(listings_array[i].quote.USD.percent_change_7d.toFixed(2)))
-        new_row.appendChild(day_7)
-
-        //add row to table
-        table.appendChild(new_row)
-    }*/
-    
     var row = 
     `<tr>
-      <td>${i}</td>
+      <td>${i+1}</td>
       <td>${data[i].name} (${data[i].symbol})</td>
       <td>$${data[i].quote.USD.price.toFixed(2)}</td>
       <td>$${data[i].quote.USD.market_cap.toFixed(0)}</td>
@@ -111,3 +75,50 @@ function resolve_issue(obj)
 {
     console.log(obj)
 }
+
+
+/******************************
+ Table ordering & Search bar 
+ *****************************/
+
+$('th').on('click', function(){
+    var column = $(this).data('column')
+    var order = $(this).data('order')
+    var text = $(this).html()
+    text = text.substring(0, text.length - 1)
+  
+    if(order == 'desc'){
+      $(this).data('order', "asc")
+      myArray = myArray.sort((a,b) => a[column] > b[column] ? 1 : -1)
+      text += '&#9660'
+  
+    }else{
+      $(this).data('order', "desc")
+      myArray = myArray.sort((a,b) => a[column] < b[column] ? 1 : -1)
+      text += '&#9650'
+  
+    }
+    $(this).html(text)
+    buildTable(myArray)
+  })
+  
+  $('#search_input').on('keyup', function(){
+      var value = $(this).val()
+      console.log('Value:', value)
+      var data = searchTable(value, myArray)
+      buildTable(data)
+  })
+  
+  function searchTable(value, data){
+      var filteredData = []
+  
+      for(var i = 0; i < data.length; i++){
+          value = value.toLowerCase()
+          var name = data[i].name.toLowerCase()
+  
+          if(name.includes(value)){
+              filteredData.push(data[i])
+          }
+      }
+      return filteredData
+  }
