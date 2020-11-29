@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.js"></script>
     <script src=graph.js></script>
+    <script src=details.js></script>
     <script> //Grabbing the url parameter
       var parameters = location.search.substring(1).split("&");
       var temp = parameters[0].split("=");
@@ -54,15 +55,48 @@
           </div>
           <div class="row">
             <div class="col-xs-6 col-md-4">
-              <h3>Info</h3>
-                Currency info goes here
+              <h3 id="coin_name"></h3>
+              <script>
+                if(coin) {
+                  document.getElementById("coin_name").innerHTML = coin;
+                }
+                else {
+                  document.getElementById("coin_name").innerHTML = "";
+                }
+              </script>
+              Currency info goes here
+              <div id="numbers">
+                <table>
+                  <tr>
+                    <th colspan="2">Price</th>
+                    <th id="price"></th>
+                  </tr>
+                  <tr>
+                    <th colspan="2">Market Cap</th>
+                    <th id="cap"></th>
+                  </tr>
+                  <tr>
+                    <th colspan="2">Trading Volume</th>
+                    <th id="vol"></th>
+                  </tr>
+                </table>
+
+
+                <script>
+                  getNumbers(coin);
+                </script>
+              </div>
+              <div id="descrip">
+                <script>
+                  getInfo(coin);
+                </script>
+              </div>
             </div>
             <div class="col-xs-6 col-md-8">
-              <h3>Graph</h3>
-                <canvas id="chart"></canvas>
-                <script>
-                  getCoinID(coin);
-                </script>
+              <canvas id="chart"></canvas>
+              <script>
+                getGraph(coin);
+              </script>
             </div>
           </div>
 </body>
