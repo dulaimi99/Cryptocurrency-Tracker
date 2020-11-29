@@ -1,7 +1,21 @@
-charting()
 
-function charting(){
-    let prom = fetchGraphData("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7&interval=daily");
+function getCoinID(coin) {
+	let prom = fetchList("https://api.coingecko.com/api/v3/coins/list");
+	prom.catch(error => { console.error(error.message); });
+	prom.then(list => {
+		for(var i=0; i < list.length; i++){
+			if(coin == list[i].name) {
+                var id = list[i].id;
+                price_chart(id);
+                return;
+            }
+        }
+    })
+    
+}
+
+function price_chart(id) {
+    let prom = fetchGraphData(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7&interval=daily`);
 	prom.catch(error => { console.error(error.message); });
 	prom.then(data => {
         console.log(data);
@@ -13,12 +27,12 @@ function charting(){
             dates.push(moment(temp_prices[i][0]).format('lll'));
         }
 
-        for(i = 0; i < 8; i++) {
+/*         for(i = 0; i < 8; i++) {
             console.log(dates[i])
         }
 
         var m_cap = data.market_caps;
-        var t_vol = data.total_volumes;
+        var t_vol = data.total_volumes; */
 
 
         var ctx = document.getElementById('chart').getContext('2d');
@@ -42,7 +56,6 @@ function charting(){
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
                 ticks: {
                     source: 'labels'
                 },
@@ -69,6 +82,16 @@ async function fetchGraphData(url) {
     if (response.status == 200) {
         data = await response.json();
         return data;
+    }
+    throw new Error(response.status);
+}
+
+async function fetchList(url) {
+    
+    let response = await fetch(url);
+    if (response.status == 200) {
+        list = await response.json();
+        return list;
     }
     throw new Error(response.status);
 }
