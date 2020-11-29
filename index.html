@@ -34,7 +34,7 @@
         </div>
     </nav>
 
-    <body onload="request_table(); request_headlines()">
+    <body>
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-8">
@@ -67,13 +67,15 @@
                   </tr>
                 </thead>
                 <tbody id="table_body">
+                  <script>request_table();</script>
                 </tbody>
-              
               </table>
             </div>
           </div>
+
           <div class="col-xs-6 col-md-4" id="headlines_container">
             <h3>Headlines</h3>
+            <script> request_headlines();</script>
           </div>
         </div>
     </body>
