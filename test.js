@@ -1,5 +1,5 @@
-const { get } = require("http");
-var fetch = require("node-fetch");
+/* const { get } = require("http");
+var fetch = require("node-fetch"); */
 //const { resolve } = require("path");
 
 /*
@@ -14,13 +14,6 @@ let init =
 
 }
 */
-
-
-
-
-
-
-
 
 
 /*let init = 
@@ -63,7 +56,7 @@ let headers = {
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'cross-site',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36',
-    'X-CMC_PRO_API_KEY': 'dddd7b23-d72f-48c8-934f-33136b9b827b',
+    'X-CMC_PRO_API_KEY': 'c0389b1a-3536-465c-8e3b-5935762f2f4e',
 
 }
 

@@ -2,7 +2,7 @@ var currency = [];
 pushList();
 
 function pushList() {
-	let prom = fetchCurList("https://api.coingecko.com/api/v3/coins/list");
+	let prom = fetchList("https://api.coingecko.com/api/v3/coins/list");
 	prom.catch(error => { console.error(error.message); });
 	prom.then(list => {
 		var i;
@@ -18,7 +18,7 @@ function pushList() {
 
 }
 
-async function fetchCurList(url) {
+async function fetchList(url) {
     
     let response = await fetch(url);
     if (response.status == 200) {
