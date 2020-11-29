@@ -6,14 +6,14 @@ function getGraph(coin) {
 		for(var i=0; i < list.length; i++){
 			if(coin == list[i].name) {
                 var id = list[i].id;
-                price_chart(id);
+                charts(id);
                 return;
             }
         }
     })
 }
 
-function price_chart(id) {
+function charts(id) {
     let prom = fetchGraphData(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7&interval=daily`);
 	prom.catch(error => { console.error(error.message); });
 	prom.then(data => {
@@ -26,16 +26,20 @@ function price_chart(id) {
             dates.push(moment(temp_prices[i][0]).format('lll'));
         }
 
-/*         for(i = 0; i < 8; i++) {
-            console.log(dates[i])
+        var temp_caps = data.market_caps;
+        var caps = []
+        for(var i = 0; i < temp_caps.length; i++) {
+            caps.push(temp_caps[i][1]);
         }
 
-        var m_cap = data.market_caps;
-        var t_vol = data.total_volumes; */
+        var vols = []
+        var temp_vols = data.total_volumes; 
+        for(var i = 0; i < temp_vols.length; i++) {
+            vols.push(temp_vols[i][1]);
+        }
 
-
-        var ctx = document.getElementById('chart').getContext('2d');
-        var myChart = new Chart(ctx, {
+        var atx = document.getElementById('prices_chart').getContext('2d');
+        var prices_chart = new Chart(atx, {
         type: 'line',
         data: {
             labels: dates,
@@ -48,6 +52,78 @@ function price_chart(id) {
                 ],
                 borderColor: [
                     'rgba(99, 255, 132, 1)',
+
+                ],
+                borderWidth: 1 
+            }]
+            },
+            options: {
+                responsive: true,
+                ticks: {
+                    source: 'labels'
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            callback: function(value, index, values) {
+                                return '$' + value;
+                            }
+                        }
+                    }]
+                }
+            }
+        });
+
+        var btx = document.getElementById('caps_chart').getContext('2d');
+        var caps_chart = new Chart(btx, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Daily Market Cap',
+                data: caps,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+
+                ],
+                borderWidth: 1 
+            }]
+            },
+            options: {
+                responsive: true,
+                ticks: {
+                    source: 'labels'
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            callback: function(value, index, values) {
+                                return '$' + value;
+                            }
+                        }
+                    }]
+                }
+            }
+        });
+
+        var ctx = document.getElementById('vols_chart').getContext('2d');
+        var vols_chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Daily Total Volume',
+                data: vols,
+                backgroundColor: [
+                    'rgba(132, 99, 255, 0.2)',
+
+                ],
+                borderColor: [
+                    'rgba(132, 99, 255, 1)',
 
                 ],
                 borderWidth: 1 

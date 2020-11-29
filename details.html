@@ -54,46 +54,47 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-xs-6 col-md-4">
-              <h3 id="coin_name"></h3>
+            <div class="col-xs-6 col-md-5">
+              <h2 id="coin_name"></h2>
               <script>
                 if(coin) {
-                  document.getElementById("coin_name").innerHTML = coin;
+                  document.getElementById("coin_name").innerHTML = "<center>" + coin + "<\center>";
                 }
                 else {
                   document.getElementById("coin_name").innerHTML = "";
                 }
               </script>
-              Currency info goes here
               <div id="numbers">
-                <table>
+                <table class="table table-striped">
                   <tr>
-                    <th colspan="2">Price</th>
+                    <th>Price</th>
                     <th id="price"></th>
                   </tr>
                   <tr>
-                    <th colspan="2">Market Cap</th>
+                    <th>Market Cap</th>
                     <th id="cap"></th>
                   </tr>
                   <tr>
-                    <th colspan="2">Trading Volume</th>
+                    <th>Trading Volume</th>
                     <th id="vol"></th>
                   </tr>
                 </table>
-
-
                 <script>
                   getNumbers(coin);
                 </script>
               </div>
-              <div id="descrip">
+              <br />
+              <div id="descrip">  
                 <script>
                   getInfo(coin);
                 </script>
               </div>
+              <br />
             </div>
-            <div class="col-xs-6 col-md-8">
-              <canvas id="chart"></canvas>
+            <div class="col-xs-6 col-md-7">
+              <canvas id="prices_chart"></canvas>
+              <canvas id="caps_chart"></canvas>
+              <canvas id="vols_chart"></canvas>
               <script>
                 getGraph(coin);
               </script>
