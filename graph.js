@@ -1,5 +1,5 @@
 
-function getCoinID(coin) {
+function getGraph(coin) {
 	let prom = fetchList("https://api.coingecko.com/api/v3/coins/list");
 	prom.catch(error => { console.error(error.message); });
 	prom.then(list => {
@@ -11,14 +11,13 @@ function getCoinID(coin) {
             }
         }
     })
-    
 }
 
 function price_chart(id) {
     let prom = fetchGraphData(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7&interval=daily`);
 	prom.catch(error => { console.error(error.message); });
 	prom.then(data => {
-        console.log(data);
+        //console.log(data);
         var temp_prices = data.prices;
         var prices = [];
         var dates = [];
