@@ -66,7 +66,6 @@ var myArray = []
 		var table = document.getElementById('myTable')
         table.innerHTML = ''
 		for (var i = 0; i < data.length; i++){
-        //for (var i = 1; i <= 25; i++){
             var row = `<tr>
                             <td>${i}</td>
 							<td>${data[i].name} (${data[i].symbol})</td>
