@@ -41,7 +41,7 @@
           <div class="row">
             <div class="col-lg-12 col-md-8">
                 <div class="jumbotron">
-                    <h1 class="display-4"><center>Crypto Tracker</center></h1>
+                    <h1 class="display-4">Crypto Tracker</h1>
                     <hr class="my-4">
                     <form class="form-inline d-flex justify-content-center md-form form-sm mt-0" action="details.html" method="GET">
                         <i class="fas fa-search" aria-hidden="true"></i>
@@ -78,10 +78,26 @@
                     <th>Trading Volume</th>
                     <th id="vol"></th>
                   </tr>
+                  <tr id="hl" style="display: none">
+                    <th>24 hr High/Low</th>
+                    <th id="hilo"></th>
+                  </tr>
+                  <tr id="24pc" style="display: none">
+                    <th>24 hr Price Change</th>
+                    <th id="24h%"></th>
+                  </tr>
+                  <tr id="7dpc" style="display: none">
+                    <th>7 Day Price Change</th>
+                    <th id="7d%"></th>
+                  </tr>
+                  <tr id="14dpc" style="display: none">
+                    <th>14 Day Price Change</th>
+                    <th id="14d%"></th>
+                  </tr>
                 </table>
-                <script>
+                <!--<script>
                   getNumbers(coin);
-                </script>
+                </script>-->
               </div>
               <br />
               <div id="descrip">  

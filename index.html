@@ -27,9 +27,9 @@
         <a class="navbar-brand" href="#">Crypto Tracker</a>
         <div class="navbar-collapse">
         <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"><a class="nav-link" href="#">home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">about</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
+        <li class="nav-item active"><a class="nav-link" href="index.html">home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">contact</a></li>
         </ul>
         </div>
     </nav>
@@ -42,10 +42,12 @@
                   <h1 class="display-4">Crypto Tracker</h1>
                   <p class="lead">Browse top cryptocurrency listings and news</p>
                   <hr class="my-4">
-                  <form class="form-inline d-flex justify-content-center md-form form-sm mt-0" onsubmit="load_crypto();">
+                  <form class="form-inline d-flex justify-content-center md-form form-sm mt-0" action="details.html" method="GET">
                       <i class="fas fa-search" aria-hidden="true"></i>
-                      <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" id="search_input"
-                        aria-label="Search" >
+                      <input class="form-control form-control-sm ml-3 w-75" type="text" value="" 
+                          aria-label="Search" name="currency" placeholder="Search" list=currency>
+                        <datalist id="currency"></datalist>
+                        <script src="search.js"></script>
                     </form>
                 </div>
           </div>
