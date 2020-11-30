@@ -80,11 +80,10 @@ function add_listings(data)
 function load_crypto()
 {
     //extract search query
-    search_value = document.getElementById("search_content").value;
-
-   
+    search_value = document.getElementById("search_input").value;
+    
     //construct new url
-    var url = "https://dulaimi99.github.io/Cryptocurrency-Tracker/name=" + search_value
+    var url = "https://dulaimi99.github.io/Cryptocurrency-Tracker/details.html?name=" + search_value
 
     //load new page
     window.open(url)
