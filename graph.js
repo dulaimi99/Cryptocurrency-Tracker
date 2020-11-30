@@ -80,7 +80,7 @@ function charts(id) {
 
                 ],
                 borderWidth: 1,
-                lineTension: 0.2
+                //lineTension: 0 
             }]
             },
             options: {
@@ -116,8 +116,7 @@ function charts(id) {
                     'rgba(255, 99, 132, 1)',
 
                 ],
-                borderWidth: 1,
-                lineTension: 0.2
+                borderWidth: 1 
             }]
             },
             options: {
@@ -153,8 +152,7 @@ function charts(id) {
                     'rgba(132, 99, 255, 1)',
 
                 ],
-                borderWidth: 1,
-                lineTension: 0.2 
+                borderWidth: 1 
             }]
             },
             options: {
@@ -219,8 +217,7 @@ function charts_24(id) {
                     'rgba(99, 255, 132, 1)',
 
                 ],
-                borderWidth: 1,
-                lineTension: 0.2
+                borderWidth: 1 
             }]
             },
             options: {
@@ -256,8 +253,7 @@ function charts_24(id) {
                     'rgba(255, 99, 132, 1)',
 
                 ],
-                borderWidth: 1,
-                lineTension: 0.2
+                borderWidth: 1 
             }]
             },
             options: {
@@ -293,8 +289,7 @@ function charts_24(id) {
                     'rgba(132, 99, 255, 1)',
 
                 ],
-                borderWidth: 1,
-                lineTension: 0.2
+                borderWidth: 1 
             }]
             },
             options: {
@@ -359,8 +354,7 @@ function charts_2w(id) {
                     'rgba(99, 255, 132, 1)',
 
                 ],
-                borderWidth: 1,
-                lineTension: 0.2
+                borderWidth: 1 
             }]
             },
             options: {
@@ -396,8 +390,7 @@ function charts_2w(id) {
                     'rgba(255, 99, 132, 1)',
 
                 ],
-                borderWidth: 1,
-                lineTension: 0.2 
+                borderWidth: 1 
             }]
             },
             options: {
@@ -433,8 +426,7 @@ function charts_2w(id) {
                     'rgba(132, 99, 255, 1)',
 
                 ],
-                borderWidth: 1,
-                lineTension: 0.2
+                borderWidth: 1 
             }]
             },
             options: {
