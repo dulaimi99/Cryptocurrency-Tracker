@@ -23,7 +23,7 @@ function getGraph(coin) {
 	prom.catch(error => { console.error(error.message); });
 	prom.then(list => {
 		for(var i=0; i < list.length; i++){
-			if(coin == list[i].name) {
+			if(coin.toLowerCase() == list[i].name.toLowerCase()) {
                 var id = list[i].id;
                 if(coin) { //unhides buttons
                     var button = document.getElementById("col_b");
@@ -79,7 +79,8 @@ function charts(id) {
                     'rgba(99, 255, 132, 1)',
 
                 ],
-                borderWidth: 1 
+                borderWidth: 1,
+                //lineTension: 0 
             }]
             },
             options: {
