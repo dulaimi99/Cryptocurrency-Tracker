@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .headlines {
     display: flex;
     flex-direction: column;
@@ -22,7 +21,8 @@ h5{
 .name{
     cursor: pointer;
     color: black;
-=======
+}
+
 .display-4 {
     font-style: italic;
     color: lightcoral;
@@ -36,5 +36,4 @@ h5{
 
 .title {
     font-style: italic;
->>>>>>> be9869717dd0b00f372c04e8d7171a1cb4eca509
 }
