@@ -83,7 +83,7 @@ function load_crypto()
     search_value = document.getElementById("search_input").value;
     
     //construct new url
-    var url = "https://dulaimi99.github.io/Cryptocurrency-Tracker/details.html?name=" + search_value
+    var url = "https://dulaimi99.github.io/Cryptocurrency-Tracker/details.html?currency=" + search_value
 
     //load new page
     window.open(url)
