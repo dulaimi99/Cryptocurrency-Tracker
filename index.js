@@ -59,8 +59,12 @@ function add_listings(data)
     {
     var row = 
     `<tr>
-      <td>${i+1}</td>
-      <td>${data[i].name} (${data[i].symbol})</td>
+      <td onclick=>${i+1}</td>
+      <td  >
+        <a class="name" href="https://dulaimi99.github.io/Cryptocurrency-Tracker/details.html?currency=${data[i].name}">
+            ${data[i].name} (${data[i].symbol})
+        </a>
+      </td>
       <td>$${data[i].quote.USD.price.toFixed(2)}</td>
       <td>$${data[i].quote.USD.market_cap.toFixed(0)}</td>
       <td>$${data[i].quote.USD.volume_24h.toFixed(0)}</td>
@@ -71,6 +75,9 @@ function add_listings(data)
     
     }
 }
+
+
+
 
 
 /******************************
@@ -88,6 +95,7 @@ function load_crypto()
     //load new page
     window.open(url)
 }
+
 
 
 

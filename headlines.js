@@ -36,14 +36,10 @@ function sort_headlines(headline_array)
 {
 	 
   //headlines container
-  let container = document.getElementById('headlines_container')
+  let list = document.getElementById('headlines_list')
   
-  //create a list
-  const list= document.createElement("ul")
-  container.appendChild(list)
-
   //new li element variable
-  var new_li;
+  var new_headline;
 
   //for loop variable
   var i;
@@ -52,12 +48,14 @@ function sort_headlines(headline_array)
   for(i = 0; i < 10; i++)
   {
     //new headline entry
-    new_li = 
-    `<li>
-      <a href="${headline_array[i].url}">${headline_array[i].title}</a>
-    </li>`
+    new_headline = 
+    `
+        <a href="${headline_array[i].url}" class="headline" >
+          <h5>${headline_array[i].title}</h5> 
+        </a>
+      `
     //append  it to list 
-    list.innerHTML+=new_li;
+    list.innerHTML += new_headline;
   }
 }
 
