@@ -41,7 +41,7 @@
           <div class="row">
             <div class="col-lg-12 col-md-8">
                 <div class="jumbotron">
-                    <h1 class="display-4"><center>Cryptocurrency Tracker</center></h1>
+                    <h1 class="display-4"><center>Crypto Tracker</center></h1>
                     <hr class="my-4">
                     <form class="form-inline d-flex justify-content-center md-form form-sm mt-0" action="details.html" method="GET">
                         <i class="fas fa-search" aria-hidden="true"></i>
@@ -64,8 +64,8 @@
                   document.getElementById("coin_name").innerHTML = "";
                 }
               </script>
-              <div id="numbers">
-                <table class="table table-striped">
+              <div>
+                <table id="numbers" style="display: none" class="table table-striped">
                   <tr>
                     <th>Price</th>
                     <th id="price"></th>
@@ -91,10 +91,27 @@
               </div>
               <br />
             </div>
-            <div class="col-xs-6 col-md-7">
-              <canvas id="prices_chart"></canvas>
-              <canvas id="caps_chart"></canvas>
-              <canvas id="vols_chart"></canvas>
+            <div id="col_b" class="col-xs-6 col-md-7" style="display: none">
+              <div class="btn-group d-flex justify-content-center">
+                <button id="24" onclick="graphDisplay('24')" type="button" class="btn btn-info">Last 24 hours</button>
+                <button id="week" onclick="graphDisplay('week')" type="button" class="btn btn-info">Last Week</button>
+                <button id="2week" onclick="graphDisplay('2week')" type="button" class="btn btn-info">Last 2 Weeks</button>
+              </div>
+              <div id="week_charts">
+                <canvas id="prices_chart"></canvas>
+                <canvas id="caps_chart"></canvas>
+                <canvas id="vols_chart"></canvas>
+              </div>
+              <div id="24h_charts" style="display: none">
+                <canvas id="prices_chart_24"></canvas>
+                <canvas id="caps_chart_24"></canvas>
+                <canvas id="vols_chart_24"></canvas>
+              </div>
+              <div id="2week_charts" style="display: none">              
+                <canvas id="prices_chart_2w" ></canvas>
+                <canvas id="caps_chart_2w"></canvas>
+                <canvas id="vols_chart_2w"></canvas>
+              </div>
               <script>
                 getGraph(coin);
               </script>
