@@ -1,5 +1,10 @@
 function getInfo(coin) {
-	let prom = fetchList("https://api.coingecko.com/api/v3/coins/list");
+    if(coin) { //unhides table
+        var table = document.getElementById("numbers");
+        table.style.display = '';
+    }
+    
+    let prom = fetchList("https://api.coingecko.com/api/v3/coins/list");
 	prom.catch(error => { console.error(error.message); });
 	prom.then(list => {
 		for(var i=0; i < list.length; i++){
@@ -8,6 +13,9 @@ function getInfo(coin) {
                 pushInfo(id);
                 return;
             }
+        }
+        if(coin) { 
+            document.getElementById("descrip").innerHTML = "No cryptocurrency found with that name. Please try searching again."
         }
     })
 }
