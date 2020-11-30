@@ -76,19 +76,20 @@ function add_listings(data)
 /******************************
  Search
  *****************************/
-/*
+// extract search parameter and create new page
 function load_crypto()
 {
-    //search input element
+    //extract search query
     search_value = document.getElementById("search_content").value;
 
-    //log search
-    console.log(search_value)
+   
+    //construct new url
+    var url = "https://dulaimi99.github.io/Cryptocurrency-Tracker/name=" + search_value
 
     //load new page
-    window.location.("details.html")
+    window.open(url)
 }
-*/
+
 
 
 
