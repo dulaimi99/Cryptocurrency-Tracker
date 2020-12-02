@@ -1,0 +1,39 @@
+.headlines {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #F2F3F4 ;
+
+}
+/* headline container */ 
+.headline{
+    
+   width: 100%;
+   margin-top: 10px;
+}
+
+/* headline text*/
+h6{
+    color: black;
+}
+
+ /* Make table names responsive*/
+.name{
+    cursor: pointer;
+    color: black;
+}
+
+.display-4 {
+    font-style: italic;
+    color: lightcoral;
+    font-weight: bolder;
+}
+
+.lead {
+    font-weight: 800;
+    font-style: italic;
+}
+
+.title {
+    font-style: italic;
+}
