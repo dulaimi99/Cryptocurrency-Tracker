@@ -50,7 +50,7 @@ function sort_headlines(headline_array)
     //new headline entry
     new_headline = 
     `<a href="${headline_array[i].url}" class="headline" >
-          <h5>${headline_array[i].title}</h5> 
+          <h6>${headline_array[i].title}</h6> 
         </a>`
     //append  it to list 
     list.innerHTML += new_headline;

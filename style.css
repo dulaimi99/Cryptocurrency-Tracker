@@ -13,7 +13,7 @@
 }
 
 /* headline text*/
-h5{
+h6{
     color: black;
 }
 
@@ -36,4 +36,10 @@ h5{
 
 .title {
     font-style: italic;
+}
+
+table{
+    overflow-y:scroll;
+    height:600px;
+    display:block; 
 }
