@@ -3,7 +3,7 @@
 function request_headlines()
 {
   //options
-  const options = {
+  /*const options = {
     method: 'GET',
     url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI',
     params: {
@@ -18,7 +18,20 @@ function request_headlines()
       'x-rapidapi-key': '2825d79701mshcd34ae4ab6578eep113f61jsnd1988d042da3',
       'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
     }
+  };*/
+
+  const options = {
+    method: 'GET',
+    url: 'https://bing-news-search1.p.rapidapi.com/news/search',
+    params: {q: 'cryptocurrency', freshness: 'Day', textFormat: 'Raw', safeSearch: 'Off'},
+    headers: {
+      'x-bingapis-sdk': 'true',
+      'x-rapidapi-key': '2825d79701mshcd34ae4ab6578eep113f61jsnd1988d042da3',
+      'x-rapidapi-host': 'bing-news-search1.p.rapidapi.com'
+    }
   };
+  
+  
   
   //API call
   axios.request(options)
@@ -47,15 +60,21 @@ function sort_headlines(headline_array)
   //add headlines
   for(i = 0; i < 10; i++)
   {
+    //check if source has image
+    if(headline_array[i].image !== undefined)
+    {
+      console.log(headline_array[i].image.thumbnail.contentUrl)
 
-
-    //new headline entry
-    new_headline = 
-    `<a href="${headline_array[i].url}" class="headline" > 
-        <h6>${headline_array[i].title}</h6> 
-      </a>`
-    //append  it to list 
-    list.innerHTML += new_headline;
+      //new headline entry
+      new_headline = 
+      `<a href="${headline_array[i].url}" class="headline"  > 
+        <img src="${headline_array[i].image.thumbnail.contentUrl}" alt="Headline image">
+        <h6>${headline_array[i].name}</h6> 
+        </a>`
+      //append  it to list 
+      list.innerHTML += new_headline;
+    
+    }
   }
 }
 /*
