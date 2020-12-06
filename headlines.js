@@ -1,3 +1,4 @@
+
 //headline api call
 function request_headlines()
 {
@@ -34,8 +35,7 @@ function request_headlines()
 //sort and display headlines
 function sort_headlines(headline_array)
 {
-	 
-  //headlines container
+	 //headlines container
   let list = document.getElementById('headlines_list')
   
   //new li element variable
@@ -47,15 +47,31 @@ function sort_headlines(headline_array)
   //add headlines
   for(i = 0; i < 10; i++)
   {
+
+
     //new headline entry
     new_headline = 
-    `<a href="${headline_array[i].url}" class="headline" >
-          <h6>${headline_array[i].title}</h6> 
-        </a>`
+    `<a href="${headline_array[i].url}" class="headline" > 
+        <h6>${headline_array[i].title}</h6> 
+      </a>`
     //append  it to list 
     list.innerHTML += new_headline;
   }
 }
-
-
-
+/*
+function get_image(url)
+{
+  //<img src="${image_url}" alt="headline image">
+  //var getImageUrls = require('get-image-urls');
+  
+  getImageUrls(url, function(err, images) {
+    if (!err) {
+      console.log('Images found', images.length);
+      console.log(images);
+    }
+    else {
+      console.log('ERROR', err);
+    }
+  })
+}
+*/

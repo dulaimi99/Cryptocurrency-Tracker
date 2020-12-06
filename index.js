@@ -65,11 +65,11 @@ function add_listings(data)
             ${data[i].name} (${data[i].symbol})
         </a>
       </td>
-      <td>$${data[i].quote.USD.price.toFixed(2)}</td>
-      <td>$${data[i].quote.USD.market_cap.toFixed(0)}</td>
-      <td>$${data[i].quote.USD.volume_24h.toFixed(0)}</td>
-      <td>${data[i].quote.USD.percent_change_7d.toFixed(2)}%</td>
-      <td>${data[i].quote.USD.percent_change_24h.toFixed(2)}%</td>
+      <td>$${numeral(data[i].quote.USD.price).format('0,0.00')}</td>
+      <td>$${numeral(data[i].quote.USD.market_cap).format('0,0')}</td>
+      <td>$${numeral(data[i].quote.USD.volume_24h).format('0,0')}</td>
+      <td>${numeral(data[i].quote.USD.percent_change_7d).format('0,0.00')}%</td>
+      <td>${numeral(data[i].quote.USD.percent_change_24h).format('0,0.00')}%</td>
     </tr>`
     table.innerHTML += row
     
