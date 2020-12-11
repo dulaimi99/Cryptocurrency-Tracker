@@ -1,6 +1,9 @@
 .headlines {
     width: 75%;
-    background-color: #F2F3F4 ;
+    background-color: #F2F3F4;
+    overflow-y:scroll;
+    height:600px;
+    display:block;
 
 }
 /* headline container */ 
