@@ -35,24 +35,24 @@ function pushInfo(id) {
         var percent7d = info.market_data.price_change_percentage_7d_in_currency.usd;
         var percent14d = info.market_data.price_change_percentage_14d_in_currency.usd;
 
-        document.getElementById("price").innerHTML = "$" + price;
-        document.getElementById("cap").innerHTML = "$" + cap; 
-        document.getElementById("vol").innerHTML = "$" + vol;
+        document.getElementById("price").innerHTML = "$" + numeral(price).format("0,0.00"); 
+        document.getElementById("cap").innerHTML = "$" + numeral(cap).format("0,0"); 
+        document.getElementById("vol").innerHTML = "$" + numeral(vol).format("0,0");
         if(high) {
             document.getElementById("hl").style.display ='';
-            document.getElementById("hilo").innerHTML = "$" + high + " / $" + low;
+            document.getElementById("hilo").innerHTML = "$" + numeral(high).format("0,0.00") + " / $" + numeral(low).format("0,0.00");
         }
         if(percent24h) {
             document.getElementById("24pc").style.display ='';
-            document.getElementById("24h%").innerHTML = percent24h + "%"
+            document.getElementById("24h%").innerHTML = numeral(percent24h).format("0,0.00") + "%"
         }
         if(percent7d) {
             document.getElementById("7dpc").style.display ='';
-            document.getElementById("7d%").innerHTML = percent7d + "%"
+            document.getElementById("7d%").innerHTML = numeral(percent7d).format("0,0.00") + "%"
         }
         if(percent14d) {
             document.getElementById("14dpc").style.display ='';
-            document.getElementById("14d%").innerHTML = percent14d + "%"
+            document.getElementById("14d%").innerHTML = numeral(percent14d).format("0,0.00") + "%"
         }
         
     })

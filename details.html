@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.js"></script>
     <script src=graph.js></script>
     <script src=details.js></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.0.3/numeral.min.js"></script>
     <script> //Grabbing the url parameter
       var parameters = location.search.substring(1).split("&");
       var temp = parameters[0].split("=");
@@ -68,31 +69,31 @@
                 <table id="numbers" style="display: none" class="table table-striped">
                   <tr>
                     <th>Price</th>
-                    <th id="price"></th>
+                    <td id="price"></td>
                   </tr>
                   <tr>
                     <th>Market Cap</th>
-                    <th id="cap"></th>
+                    <td id="cap"></td>
                   </tr>
                   <tr>
                     <th>Trading Volume</th>
-                    <th id="vol"></th>
+                    <td id="vol"></td>
                   </tr>
                   <tr id="hl" style="display: none">
                     <th>24 hr High/Low</th>
-                    <th id="hilo"></th>
+                    <td id="hilo"></td>
                   </tr>
                   <tr id="24pc" style="display: none">
                     <th>24 hr Price Change</th>
-                    <th id="24h%"></th>
+                    <td id="24h%"></td>
                   </tr>
                   <tr id="7dpc" style="display: none">
                     <th>7 Day Price Change</th>
-                    <th id="7d%"></th>
+                    <td id="7d%"></td>
                   </tr>
                   <tr id="14dpc" style="display: none">
                     <th>14 Day Price Change</th>
-                    <th id="14d%"></th>
+                    <td id="14d%"></td>
                   </tr>
                 </table>
                 <!--<script>
