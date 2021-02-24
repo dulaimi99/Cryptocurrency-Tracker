@@ -2,24 +2,7 @@
 //headline api call
 function request_headlines()
 {
-  //options
-  /*const options = {
-    method: 'GET',
-    url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI',
-    params: {
-      pageSize: '10',
-      q: 'cryptocurrency',
-      autoCorrect: 'false',
-      pageNumber: '1',
-      toPublishedDate: 'null',
-      fromPublishedDate: 'null'
-    },
-    headers: {
-      'x-rapidapi-key': '2825d79701mshcd34ae4ab6578eep113f61jsnd1988d042da3',
-      'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
-    }
-  };*/
-
+  //HTTP request options
   const options = {
     method: 'GET',
     url: 'https://bing-news-search1.p.rapidapi.com/news/search',
@@ -30,8 +13,6 @@ function request_headlines()
       'x-rapidapi-host': 'bing-news-search1.p.rapidapi.com'
     }
   };
-  
-  
   
   //API call
   axios.request(options)
@@ -49,7 +30,7 @@ function request_headlines()
 function sort_headlines(headline_array)
 {
 	 //headlines container
-  let list = document.getElementById('headlines_list')
+  var list = document.getElementById('headlines_list')
   
   //new li element variable
   var new_headline;
@@ -63,8 +44,6 @@ function sort_headlines(headline_array)
     //check if source has image
     if(headline_array[i].image !== undefined)
     {
-      console.log(headline_array[i].image.thumbnail.contentUrl)
-
       //new headline entry
       new_headline = 
       `<a href="${headline_array[i].url}" class="headline"  > 
@@ -77,20 +56,4 @@ function sort_headlines(headline_array)
     }
   }
 }
-/*
-function get_image(url)
-{
-  //<img src="${image_url}" alt="headline image">
-  //var getImageUrls = require('get-image-urls');
-  
-  getImageUrls(url, function(err, images) {
-    if (!err) {
-      console.log('Images found', images.length);
-      console.log(images);
-    }
-    else {
-      console.log('ERROR', err);
-    }
-  })
-}
-*/
+
