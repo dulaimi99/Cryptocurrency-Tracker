@@ -64,7 +64,7 @@ function add_listings(data_list)
         `<tr>
         <td>${i+1}</td>
         <td  >
-            <a class="name" href="https://dulaimi99.github.io/Cryptocurrency-Tracker/HTML/details.html?currency=${data_list[i].name}">
+            <a class="name" href="https://dulaimi99.github.io/Cryptocurrency-Tracker/details.html?currency=${data_list[i].name}">
                 ${data_list[i].name} (${data_list[i].symbol.toUpperCase()})
             </a>
         </td>
