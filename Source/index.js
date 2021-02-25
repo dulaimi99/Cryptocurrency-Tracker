@@ -28,7 +28,7 @@ async function request_table()
    for(l; l < top_crypto.length; ++l)
    {
 
-        //fetch coin info and pass it to 
+        //fetch coin info and add it to result list 
         await request_table_data(url+top_crypto[l])
         .then(response => 
         {
@@ -38,15 +38,14 @@ async function request_table()
    }
 
    //call function to insert into table
-   console.log(result)
    add_listings(result)
    
 }
 
-//populate table with entries
-
+//count of returned listings
 var entry_count = 0;
 
+//populate table with entries
 function add_listings(data_list)
 {    
 
@@ -77,22 +76,6 @@ function add_listings(data_list)
         table.innerHTML += row
     }
     return true;
-}
-
-/******************************
- Search
- *****************************/
-// extract search parameter and create new page
-function load_crypto()
-{
-    //extract search query
-    search_value = document.getElementById("search_input").value;
-    
-    //construct new url
-    var url = "https://dulaimi99.github.io/Cryptocurrency-Tracker/details.html?currency=" + search_value
-
-    //load new page
-    window.open(url)
 }
 
 

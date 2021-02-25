@@ -1,4 +1,3 @@
-
 //headline api call
 function request_headlines()
 {
