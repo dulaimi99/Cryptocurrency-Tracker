@@ -54,11 +54,11 @@ body {
 }
 
 .jumbotron {
-    background-image: url(banner.jpeg);
+    /* background-image: url(banner.jpeg); */
     border: 2px solid black;
-    background-size: contain;
+    /* background-size: contain;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% 100%; */
 }
 
 h3 {
