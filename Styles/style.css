@@ -4,6 +4,7 @@
     overflow-y:scroll;
     height:600px;
     display:block;
+    border: 2px solid black;
 
 }
 /* headline container */ 
@@ -46,4 +47,28 @@ table{
 
 img{
     margin: auto;
+}
+
+body {
+    background-image: url(wallpaper.jpeg);
+}
+
+.jumbotron {
+    background-image: url(banner.jpeg);
+    border: 2px solid black;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+h3 {
+    font-style: italic;
+    color: black;
+    font-weight: bolder;
+}
+
+.table {
+    border: 2px solid black;
+    width: auto;
+    height: auto;
 }
