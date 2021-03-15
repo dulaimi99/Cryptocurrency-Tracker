@@ -42,7 +42,6 @@ function charts(id) {
     let prom = fetchGraphData(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7&interval=daily`);
 	prom.catch(error => { console.error(error.message); });
 	prom.then(data => {
-        //console.log(data);
         var temp_prices = data.prices;
         var prices = [];
         var dates = [];
@@ -182,7 +181,6 @@ function charts_24(id) {
     let prom = fetchGraphData(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=1&interval=hourly`);
 	prom.catch(error => { console.error(error.message); });
 	prom.then(data => {
-        //console.log(data);
         var temp_prices = data.prices;
         var prices = [];
         var dates = [];
